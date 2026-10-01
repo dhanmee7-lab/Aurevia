@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AUREVIA | School Library Management System</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'><path d='M3 6.5C3 5.4 3.9 4.5 5 4.5H10.5C11.3 4.5 12 5.2 12 6V19C12 18.2 11.3 17.5 10.5 17.5H5C3.9 17.5 3 18.4 3 19.5V6.5Z' stroke='%23D4AF37' stroke-width='1.8' fill='%23151515'/><path d='M21 6.5C21 5.4 20.1 4.5 19 4.5H13.5C12.7 4.5 12 5.2 12 6V19C12 18.2 12.7 17.5 13.5 17.5H19C20.1 17.5 21 18.4 21 19.5V6.5Z' stroke='%23D4AF37' stroke-width='1.8' fill='%23151515'/><path d='M12 3V19' stroke='%23F0C75E' stroke-width='2.2' stroke-linecap='round'/><polygon points='12,2 10.5,5 13.5,5' fill='%23D4AF37'/></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('aurevia-theme') || localStorage.getItem('aurevia_theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ========================================================
+       AUREVIA AUTHENTICATION PAGE (FULL SCREEN DESKTOP REDESIGN)
+       ======================================================== -->
+  <div id="authContainer" class="auth-page-wrapper">
+    <div class="auth-layout-grid">
+      <!-- LEFT HERO SECTION (~62%) -->
+      <div class="auth-visual-panel">
+        <div class="auth-visual-overlay"></div>
+        <div class="auth-visual-glow"></div>
+
+        <div class="auth-visual-content">
+          <!-- Top-Left: Clean AUREVIA Logo -->
+          <div class="auth-brand-header">
+            <div class="brand-logo-mark">
+              <!-- AUREVIA Geometric Logo: Book + Pathway/Beacon of Knowledge -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6.5C3 5.4 3.9 4.5 5 4.5H10.5C11.3 4.5 12 5.2 12 6V19C12 18.2 11.3 17.5 10.5 17.5H5C3.9 17.5 3 18.4 3 19.5V6.5Z" stroke="#D4AF37" stroke-width="1.75" fill="rgba(212, 175, 55, 0.12)"/>
+                <path d="M21 6.5C21 5.4 20.1 4.5 19 4.5H13.5C12.7 4.5 12 5.2 12 6V19C12 18.2 12.7 17.5 13.5 17.5H19C20.1 17.5 21 18.4 21 19.5V6.5Z" stroke="#D4AF37" stroke-width="1.75" fill="rgba(212, 175, 55, 0.12)"/>
+                <path d="M12 3V19" stroke="#F0C75E" stroke-width="2" stroke-linecap="round"/>
+                <polygon points="12,2 10.5,5 13.5,5" fill="#D4AF37"/>
+                <line x1="6" y1="8.5" x2="9.5" y2="8.5" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+                <line x1="6" y1="12" x2="9.5" y2="12" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+                <line x1="14.5" y1="8.5" x2="18" y2="8.5" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+                <line x1="14.5" y1="12" x2="18" y2="12" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+              </svg>
+            </div>
+            <div class="auth-brand-text">
+              <div class="brand-name">AUREVIA <span>.</span></div>
+              <div class="brand-subtitle">School Library Management System</div>
+              <div class="brand-tagline">"The Path to Knowledge"</div>
+            </div>
+          </div>
+
+          <!-- Main Hero Content -->
+          <div class="auth-hero-body">
+            <h1 class="auth-hero-headline">
+              Knowledge Builds a<br>
+              <span class="gold-highlight">Brighter Tomorrow</span>
+            </h1>
+            <p class="auth-hero-subtext">
+              Access your library, discover new knowledge, and manage your academic journey.
+            </p>
+
+            <!-- 3 Horizontal Feature Cards -->
+            <div class="auth-feature-cards">
+              <!-- Card 1: Books -->
+              <div class="feature-card">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                </div>
+                <div class="feature-card-content">
+                  <h4>Books</h4>
+                  <p>Comprehensive catalog and literature collection.</p>
+                </div>
+                <div class="feature-card-arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Card 2: Borrow & Return -->
+              <div class="feature-card">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                  </svg>
+                </div>
+                <div class="feature-card-content">
+                  <h4>Borrow & Return</h4>
+                  <p>Seamless lending and digital circulation tracking.</p>
+                </div>
+                <div class="feature-card-arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Card 3: Members -->
+              <div class="feature-card">
+                <div class="feature-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="feature-card-content">
+                  <h4>Members</h4>
+                  <p>Engage students, faculty, and academic readers.</p>
+                </div>
+                <div class="feature-card-arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom-Left Library Information Strip -->
+          <div class="auth-info-strip">
+            <div class="info-strip-item">
+              <span class="info-strip-icon">📚</span>
+              <div class="info-strip-text">
+                <span class="info-strip-title">BOOKS</span>
+                <span class="info-strip-desc">More Knowledge</span>
+              </div>
+            </div>
+            <div class="info-strip-divider"></div>
+            <div class="info-strip-item">
+              <span class="info-strip-icon">👥</span>
+              <div class="info-strip-text">
+                <span class="info-strip-title">MEMBERS</span>
+                <span class="info-strip-desc">Stronger Community</span>
+              </div>
+            </div>
+            <div class="info-strip-divider"></div>
+            <div class="info-strip-item">
+              <span class="info-strip-icon">🛡️</span>
+              <div class="info-strip-text">
+                <span class="info-strip-title">SECURE</span>
+                <span class="info-strip-desc">Protected Access</span>
+              </div>
+            </div>
+            <div class="info-strip-divider"></div>
+            <div class="info-strip-item">
+              <span class="info-strip-icon">📊</span>
+              <div class="info-strip-text">
+                <span class="info-strip-title">INSIGHTS</span>
+                <span class="info-strip-desc">Smarter Decisions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT AUTHENTICATION PANEL (~38%) -->
+      <div class="auth-card-panel">
+        <div class="auth-card-surface">
+          <!-- Top Tabs: [ Sign In ]   [ Create Account ] -->
+          <div class="auth-tabs-header">
+            <button type="button" class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">
+              Sign In
+            </button>
+            <button type="button" class="auth-tab-btn" id="tabRegisterBtn" onclick="switchAuthTab('register')">
+              Create Account
+            </button>
+          </div>
+
+          <!-- TAB 1: LOGIN PANE -->
+          <div id="loginFormPane" class="auth-pane active">
+            <div class="auth-pane-header">
+              <h2>Welcome Back</h2>
+              <p>Sign in to your AUREVIA account</p>
+            </div>
+
+            <form id="loginForm" onsubmit="handleLoginSubmit(event)" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="loginUsername">Username or Email</label>
+                <div class="input-with-icon">
+                  <span class="field-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </span>
+                  <input type="text" id="loginUsername" class="form-control" placeholder="Enter your username or email" required autocomplete="username">
+                </div>
+                <div class="field-error-msg" id="loginUsernameError"></div>
+              </div>
+
+              <div class="form-group">
+                <div class="field-header-row">
+                  <label class="form-label" for="loginPassword" style="margin-bottom:0;">Password</label>
+                  <a href="javascript:void(0)" class="forgot-pass-link" onclick="openForgotPasswordModal()">Forgot Password?</a>
+                </div>
+                <div class="input-with-icon" style="margin-top:0.35rem;">
+                  <span class="field-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </span>
+                  <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required autocomplete="current-password">
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="Toggle password visibility">
+                    👁️
+                  </button>
+                </div>
+                <div class="field-error-msg" id="loginPasswordError"></div>
+              </div>
+
+              <div class="form-options-row">
+                <label class="remember-checkbox-label">
+                  <input type="checkbox" id="loginRememberMe">
+                  <span>Remember me</span>
+                </label>
+              </div>
+
+              <button type="submit" id="loginSubmitBtn" class="btn btn-primary auth-submit-btn">
+                <span class="btn-text">Sign In &nbsp;&rarr;</span>
+                <span class="btn-loader" style="display:none;"><span class="spinner-inline"></span> Signing In...</span>
+              </button>
+
+              <div class="auth-security-indicator">
+                <span>🔒 Secure authentication</span>
+              </div>
+            </form>
+          </div>
+
+          <!-- TAB 2: CREATE ACCOUNT PANE -->
+          <div id="registerFormPane" class="auth-pane" style="display:none;">
+            <div class="auth-pane-header">
+              <h2>Create Your AUREVIA Account</h2>
+              <p>Join AUREVIA and start your learning journey.</p>
+            </div>
+
+            <!-- Registration Success State Box -->
+            <div id="registerSuccessState" class="register-success-box" style="display:none;">
+              <div class="success-icon-badge">✅</div>
+              <h3>Account created successfully.</h3>
+              <p>Your AUREVIA account is ready.</p>
+              <button type="button" class="btn btn-primary auth-submit-btn" onclick="proceedToLoginAfterRegister()">
+                Continue to Sign In &nbsp;&rarr;
+              </button>
+            </div>
+
+            <form id="registerForm" onsubmit="handleRegisterSubmit(event)" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="regFullName">Full Name *</label>
+                <div class="input-with-icon">
+                  <span class="field-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </span>
+                  <input type="text" id="regFullName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="field-error-msg" id="regFullNameError"></div>
+              </div>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label" for="regUsername">Username *</label>
+                  <div class="input-with-icon">
+                    <span class="field-icon">@</span>
+                    <input type="text" id="regUsername" class="form-control" placeholder="Choose a username" required autocomplete="username">
+                  </div>
+                  <div class="field-error-msg" id="regUsernameError"></div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="regPhone">Phone Number</label>
+                  <div class="input-with-icon">
+                    <span class="field-icon">📞</span>
+                    <input type="tel" id="regPhone" class="form-control" placeholder="Phone number (optional)">
+                  </div>
+                  <div class="field-error-msg" id="regPhoneError"></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regEmail">Institutional Email *</label>
+                <div class="input-with-icon">
+                  <span class="field-icon">✉️</span>
+                  <input type="email" id="regEmail" class="form-control" placeholder="Enter your institutional email" required autocomplete="email">
+                </div>
+                <div class="field-error-msg" id="regEmailError"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regPassword">Password *</label>
+                <div class="input-with-icon">
+                  <span class="field-icon">🔒</span>
+                  <input type="password" id="regPassword" class="form-control" placeholder="Create a password (min 8 chars)" required autocomplete="new-password" oninput="updatePasswordStrengthMeter(this.value)">
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('regPassword', this)">👁️</button>
+                </div>
+                <div class="field-error-msg" id="regPasswordError"></div>
+
+                <!-- Password Strength Meter -->
+                <div class="password-strength-container" id="passStrengthContainer" style="display:none;">
+                  <div class="strength-bar-track">
+                    <div class="strength-bar-fill" id="passStrengthFill"></div>
+                  </div>
+                  <div class="strength-label-row">
+                    <span>Password Strength:</span>
+                    <strong id="passStrengthText">Weak</strong>
+                  </div>
+                  <div class="strength-rules-list">
+                    <div class="strength-rule" id="ruleLength"><span class="rule-icon">○</span> Minimum 8 characters</div>
+                    <div class="strength-rule" id="ruleUpper"><span class="rule-icon">○</span> Uppercase letter</div>
+                    <div class="strength-rule" id="ruleLower"><span class="rule-icon">○</span> Lowercase letter</div>
+                    <div class="strength-rule" id="ruleNumber"><span class="rule-icon">○</span> Number</div>
+                    <div class="strength-rule" id="ruleSpecial"><span class="rule-icon">○</span> Special character</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="regConfirmPassword">Confirm Password *</label>
+                <div class="input-with-icon">
+                  <span class="field-icon">🔒</span>
+                  <input type="password" id="regConfirmPassword" class="form-control" placeholder="Confirm your password" required autocomplete="new-password">
+                  <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('regConfirmPassword', this)">👁️</button>
+                </div>
+                <div class="field-error-msg" id="regConfirmPasswordError"></div>
+              </div>
+
+              <button type="submit" id="registerSubmitBtn" class="btn btn-primary auth-submit-btn">
+                <span class="btn-text">Create Account &nbsp;&rarr;</span>
+                <span class="btn-loader" style="display:none;"><span class="spinner-inline"></span> Creating Account...</span>
+              </button>
+
+              <div class="auth-security-indicator">
+                <span>🔒 Secure authentication</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       TOP HEADER (AUTHENTICATED)
+       ======================================================== -->
+  <header class="top-header" id="appHeader" style="display:none;">
+    <div class="header-left">
+      <!-- Mobile Sidebar Toggle -->
+      <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Toggle Navigation">
+        ☰
+      </button>
+
+      <!-- Page Title / Breadcrumb -->
+      <div class="header-breadcrumb" id="headerBreadcrumb">
+        <span class="breadcrumb-root">AUREVIA</span>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current" id="headerBreadcrumbCurrent">Dashboard</span>
+      </div>
+
+      <!-- Global Search Bar -->
+      <div class="global-search-bar" id="globalSearchBarTrigger" title="Click or press Ctrl + K to search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" placeholder="Search books, members, categories..." readonly>
+        <span class="kbd-shortcut">Ctrl + K</span>
+      </div>
+    </div>
+
+    <!-- Right: Header Controls & User Profile -->
+    <div class="header-right">
+      <!-- Live Date/Time Clock Pill -->
+      <div class="header-clock-pill">
+        <span style="color:var(--gold-primary);">●</span>
+        <span id="liveClockDisplay">Loading time...</span>
+      </div>
+
+      <!-- Notifications -->
+      <button class="header-icon-btn" id="headerNotificationBtn" title="Notifications" aria-label="Notifications" onclick="showNotificationToast()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+        <span class="notification-dot"></span>
+      </button>
+
+      <!-- Theme Switcher -->
+      <button class="header-icon-btn" id="themeToggleBtn" title="Switch to Light Mode" aria-label="Switch to Light Mode">
+        ☀️
+      </button>
+
+      <!-- User Profile & Dropdown -->
+      <div class="user-profile-widget" id="userMenuDropdown" title="Click to open user menu" onclick="toggleUserDropdown(event)">
+        <div class="user-avatar-circle" id="headerUserAvatar">AU</div>
+        <div class="user-text-meta">
+          <span class="user-name-title" id="headerUserName">Administrator</span>
+          <span class="user-role-label" id="headerUserRole">ADMIN</span>
+        </div>
+        <span class="dropdown-chevron">▼</span>
+
+        <!-- Dropdown Menu -->
+        <div class="user-dropdown-menu" id="userDropdownMenu" style="display:none;" onclick="event.stopPropagation()">
+          <div class="dropdown-user-header">
+            <div class="dropdown-name" id="dropdownUserName">Administrator</div>
+            <div class="dropdown-email" id="dropdownUserEmail">admin@aurevia.edu</div>
+            <span class="status-pill active" id="dropdownUserBadge" style="margin-top:0.4rem; display:inline-block;">ADMIN</span>
+          </div>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" id="menuItemUsers" onclick="switchNav('users'); closeUserDropdown();">
+            <span>👥</span> Users Directory
+          </button>
+          <button class="dropdown-item" id="menuItemSettings" onclick="switchNav('settings'); closeUserDropdown();">
+            <span>⚙️</span> System Settings
+          </button>
+          <button class="dropdown-item staff-only" id="seedDemoDataBtn" title="Load real-world library demo data" onclick="closeUserDropdown()">
+            <span>✨</span> Load Demo Data
+          </button>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item danger" onclick="handleLogout()">
+            <span>🚪</span> Sign Out
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       APPLICATION SHELL (AUTHENTICATED)
+       ======================================================== -->
+  <div class="app-shell" id="appShell" style="display:none;">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="left-sidebar" id="appSidebar">
+      <!-- Sidebar Brand Block (Single Official AUREVIA Identity) -->
+      <div class="sidebar-brand-block">
+        <div class="brand-container">
+          <div class="brand-logo-mark">
+            <!-- AUREVIA Geometric Logo: Book + Pathway/Beacon of Knowledge -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 6.5C3 5.4 3.9 4.5 5 4.5H10.5C11.3 4.5 12 5.2 12 6V19C12 18.2 11.3 17.5 10.5 17.5H5C3.9 17.5 3 18.4 3 19.5V6.5Z" stroke="#D4AF37" stroke-width="1.75" fill="rgba(212, 175, 55, 0.12)"/>
+              <path d="M21 6.5C21 5.4 20.1 4.5 19 4.5H13.5C12.7 4.5 12 5.2 12 6V19C12 18.2 12.7 17.5 13.5 17.5H19C20.1 17.5 21 18.4 21 19.5V6.5Z" stroke="#D4AF37" stroke-width="1.75" fill="rgba(212, 175, 55, 0.12)"/>
+              <path d="M12 3V19" stroke="#F0C75E" stroke-width="2" stroke-linecap="round"/>
+              <polygon points="12,2 10.5,5 13.5,5" fill="#D4AF37"/>
+              <line x1="6" y1="8.5" x2="9.5" y2="8.5" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+              <line x1="6" y1="12" x2="9.5" y2="12" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+              <line x1="14.5" y1="8.5" x2="18" y2="8.5" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+              <line x1="14.5" y1="12" x2="18" y2="12" stroke="#F0C75E" stroke-width="1.25" stroke-linecap="round" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <div class="brand-name">AUREVIA <span>.</span></div>
+            <div class="brand-subtitle">School Library Management System</div>
+            <div class="brand-tagline">"The Path to Knowledge"</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav-list">
+        <a class="sidebar-nav-item active" data-view="dashboard">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9"></rect>
+                <rect x="14" y="3" width="7" height="5"></rect>
+                <rect x="14" y="12" width="7" height="9"></rect>
+                <rect x="3" y="16" width="7" height="5"></rect>
+              </svg>
+            </span>
+            <span class="nav-text">Dashboard</span>
+          </div>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="books">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+            </span>
+            <span class="nav-text">Books Catalog</span>
+          </div>
+          <span class="nav-badge-pill" id="badgeTotalBooks">0</span>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="circulation">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="17 1 21 5 17 9"></polyline>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                <polyline points="7 23 3 19 7 15"></polyline>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+              </svg>
+            </span>
+            <span class="nav-text">Issue & Return</span>
+          </div>
+          <span class="nav-badge-pill" id="badgeActiveLoans">0</span>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="members">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </span>
+            <span class="nav-text">Members</span>
+          </div>
+          <span class="nav-badge-pill" id="badgeTotalMembers">0</span>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="fines">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v12M8 10h8"></path>
+              </svg>
+            </span>
+            <span class="nav-text">Fines & Dues</span>
+          </div>
+          <span class="nav-badge-pill" id="badgeUnpaidFines">0</span>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="categories">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+              </svg>
+            </span>
+            <span class="nav-text">Categories</span>
+          </div>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="reports">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </span>
+            <span class="nav-text">Reports</span>
+          </div>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="users">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <polyline points="16 11 18 13 22 9"></polyline>
+              </svg>
+            </span>
+            <span class="nav-text">Users</span>
+          </div>
+        </a>
+
+        <a class="sidebar-nav-item" data-view="settings">
+          <div class="nav-item-content">
+            <span class="nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </span>
+            <span class="nav-text">Settings</span>
+          </div>
+        </a>
+      </nav>
+
+      <!-- Sidebar Bottom Quote -->
+      <div class="sidebar-footer-quote">
+        <div class="quote-icon-subtle">📖</div>
+        <div class="quote-text-quote">
+          "The Path to Knowledge"
+        </div>
+        <div class="quote-sub-meta">
+          <span>&bull;</span> AUREVIA Edition
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========================================================
+         MAIN CONTENT VIEWPORT
+         ======================================================== -->
+    <main class="content-viewport">
+
+      <!-- 1. DASHBOARD PAGE -->
+      <section id="dashboardView" class="page-view active">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2 id="dashWelcomeHeading">Good Morning, Admin</h2>
+            <p id="dashWelcomeSub">Here's your library overview for today.</p>
+          </div>
+          <div class="page-actions-group staff-only">
+            <button class="btn btn-secondary" onclick="switchNav('circulation')">🔄 Loan Desk</button>
+            <button class="btn btn-primary" onclick="openIssueModal()">⚡ Issue Book</button>
+          </div>
+        </div>
+
+        <!-- 5 KPI Metrics Cards -->
+        <div class="kpi-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <!-- Total Books -->
+          <div class="kpi-card">
+            <div class="kpi-header-row">
+              <div class="kpi-icon-container gold">📚</div>
+              <span class="kpi-trend-pill positive" id="dashBooksTrend">+12 this month</span>
+            </div>
+            <div class="kpi-value-stat" id="dashTotalBooks">0</div>
+            <div class="kpi-label-text">TOTAL BOOKS</div>
+          </div>
+
+          <!-- Total Members -->
+          <div class="kpi-card">
+            <div class="kpi-header-row">
+              <div class="kpi-icon-container gold">👥</div>
+              <span class="kpi-trend-pill positive" id="dashMembersTrend">Active readers</span>
+            </div>
+            <div class="kpi-value-stat" id="dashTotalMembers">0</div>
+            <div class="kpi-label-text">TOTAL MEMBERS</div>
+          </div>
+
+          <!-- Books Issued -->
+          <div class="kpi-card">
+            <div class="kpi-header-row">
+              <div class="kpi-icon-container amber">📖</div>
+              <span class="kpi-trend-pill warning" id="dashIssuedTrend">On loan</span>
+            </div>
+            <div class="kpi-value-stat" id="dashBooksIssued">0</div>
+            <div class="kpi-label-text">BOOKS ISSUED</div>
+          </div>
+
+          <!-- Overdue Books -->
+          <div class="kpi-card">
+            <div class="kpi-header-row">
+              <div class="kpi-icon-container red">⏰</div>
+              <span class="kpi-trend-pill danger" id="dashOverdueTrend">Requires attention</span>
+            </div>
+            <div class="kpi-value-stat" id="dashOverdueBooks">0</div>
+            <div class="kpi-label-text">OVERDUE BOOKS</div>
+          </div>
+
+          <!-- Total Fines -->
+          <div class="kpi-card">
+            <div class="kpi-header-row">
+              <div class="kpi-icon-container amber">💰</div>
+              <span class="kpi-trend-pill warning" id="dashFinesTrend">Receivables</span>
+            </div>
+            <div class="kpi-value-stat" id="dashPendingFines">₹0</div>
+            <div class="kpi-label-text">TOTAL FINES</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Bar -->
+        <div class="quick-action-strip staff-only">
+          <div class="quick-action-left">
+            <h3>Quick Actions</h3>
+            <p>Direct shortcuts for high-frequency circulation desk operations</p>
+          </div>
+          <div class="page-actions-group">
+            <button class="btn btn-primary" onclick="openAddBookModal()">+ Add Book</button>
+            <button class="btn btn-primary" onclick="openIssueModal()">⚡ Issue Book</button>
+            <button class="btn btn-secondary" onclick="openAddMemberModal()">+ Register Member</button>
+            <button class="btn btn-secondary" onclick="switchNav('circulation')">🔄 Record Return</button>
+          </div>
+        </div>
+
+        <!-- Library Activity & Popular Books -->
+        <div class="dash-activity-grid">
+          <!-- Library Activity Chart -->
+          <div class="dash-activity-card">
+            <div class="activity-card-header">
+              <h3>Library Activity</h3>
+              <div class="activity-legend">
+                <span class="legend-item"><span class="legend-dot gold"></span> Books Issued</span>
+                <span class="legend-item"><span class="legend-dot ivory"></span> Books Returned</span>
+                <span class="legend-item"><span class="legend-dot red"></span> Overdue Books</span>
+              </div>
+            </div>
+            <div class="activity-chart-canvas" id="dashActivityChart">
+              <!-- Dynamically populated activity bars via app.js -->
+            </div>
+          </div>
+
+          <!-- Popular Books -->
+          <div class="dash-activity-card">
+            <div class="activity-card-header">
+              <h3>Popular Books</h3>
+              <span style="font-size:0.75rem; color:var(--text-secondary);">Top Borrowed</span>
+            </div>
+            <div class="popular-books-list" id="dashPopularBooksList">
+              <!-- Dynamically populated via app.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Circulation Feed -->
+        <div class="data-table-card">
+          <div style="padding: 1rem 1.25rem; background:var(--bg-secondary); border-bottom: 1px solid var(--border-color); display:flex; align-items:center; justify-content:space-between;">
+            <h3 style="font-size:1.05rem; font-weight:700; color:var(--text-main); font-family:var(--font-serif);">Recent Circulation</h3>
+            <button class="btn btn-secondary btn-sm" onclick="switchNav('circulation')">View All Loans →</button>
+          </div>
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Book</th>
+                  <th>Member</th>
+                  <th>Issue Date</th>
+                  <th>Due Date</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="dashRecentLoansBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. BOOKS CATALOG PAGE -->
+      <section id="booksView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Books Catalog</h2>
+            <p>Explore and manage the complete library collection.</p>
+          </div>
+          <div class="page-actions-group staff-only">
+            <button class="btn btn-primary" onclick="openAddBookModal()">+ Add New Book</button>
+          </div>
+        </div>
+
+        <!-- Top Controls -->
+        <div class="filter-controls-row">
+          <div class="search-field-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="bookSearchInput" class="search-input-field" placeholder="Search books by title, author, or ISBN...">
+          </div>
+
+          <div class="filter-actions-cluster">
+            <select id="bookAvailabilityFilter" class="select-filter-input" onchange="handleBookFilterChange()">
+              <option value="ALL">All Status</option>
+              <option value="AVAILABLE">Available Only</option>
+              <option value="ISSUED">Issued / On Loan</option>
+            </select>
+
+            <select id="bookSortFilter" class="select-filter-input" onchange="handleBookSortChange()">
+              <option value="ID_ASC">Sort: Default (ID)</option>
+              <option value="TITLE_ASC">Title: A-Z</option>
+              <option value="TITLE_DESC">Title: Z-A</option>
+              <option value="AUTHOR_ASC">Author: A-Z</option>
+            </select>
+
+            <div class="view-mode-toggle-group">
+              <button type="button" class="view-toggle-btn active" id="bookViewModeGrid" onclick="setBookCatalogViewMode('grid')" title="Grid View">
+                ⊞ Grid
+              </button>
+              <button type="button" class="view-toggle-btn" id="bookViewModeList" onclick="setBookCatalogViewMode('list')" title="List View">
+                ☰ List
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Pills Filter -->
+        <div id="booksCategoryPills" class="filter-pills-belt">
+          <!-- Injected via JavaScript -->
+        </div>
+
+        <!-- Books Grid Container (Active by default) -->
+        <div id="booksGridContainer" class="books-grid-layout">
+          <!-- Injected via JavaScript in Grid Mode -->
+        </div>
+
+        <!-- Books Table Container (List View) -->
+        <div id="booksTableContainer" class="data-table-card" style="display:none;">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Book ID</th>
+                  <th>Book Title & Details</th>
+                  <th>Author</th>
+                  <th>Category</th>
+                  <th>ISBN</th>
+                  <th>Rack / Shelf</th>
+                  <th>Available</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="booksTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="catalog-pagination-footer">
+          <span id="booksTableCountMeta">Showing 0 books</span>
+          <div class="pagination-controls" id="booksPagination">
+            <!-- Pagination buttons -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ISSUE & RETURN PAGE -->
+      <section id="circulationView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Issue & Return</h2>
+            <p>Manage book loans, returns and track active borrowings.</p>
+          </div>
+          <div class="page-actions-group staff-only">
+            <button class="btn btn-primary" onclick="openIssueModal()">+ Issue New Book</button>
+          </div>
+        </div>
+
+        <!-- Statistics Strip -->
+        <div class="kpi-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom:1.5rem;">
+          <div class="kpi-card">
+            <div class="kpi-label-text">Total Loans</div>
+            <div class="kpi-value-stat" id="circTotalLoans" style="font-size:1.75rem;">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Active Loans</div>
+            <div class="kpi-value-stat" id="circActiveLoans" style="font-size:1.75rem; color:var(--gold-soft);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Overdue Books</div>
+            <div class="kpi-value-stat" id="circOverdueLoans" style="font-size:1.75rem; color:var(--danger);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Returned Records</div>
+            <div class="kpi-value-stat" id="circReturnedLoans" style="font-size:1.75rem; color:var(--success);">0</div>
+          </div>
+        </div>
+
+        <!-- Sub Tabs -->
+        <div class="sub-nav-tabs">
+          <button class="sub-tab-btn active" data-circ-tab="ACTIVE" onclick="switchCircTab('ACTIVE')">Active Loans</button>
+          <button class="sub-tab-btn" data-circ-tab="OVERDUE" onclick="switchCircTab('OVERDUE')">⚠️ Overdue Only</button>
+          <button class="sub-tab-btn" data-circ-tab="RETURNED" onclick="switchCircTab('RETURNED')">Returned History</button>
+          <button class="sub-tab-btn" data-circ-tab="ALL" onclick="switchCircTab('ALL')">All Records</button>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls-row">
+          <div class="search-field-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="circulationSearchInput" class="search-input-field" placeholder="Search by book title or borrower name...">
+          </div>
+        </div>
+
+        <!-- Circulation Table -->
+        <div class="data-table-card">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Loan #</th>
+                  <th>Book Title & Category</th>
+                  <th>Borrower Member</th>
+                  <th>Issue Date</th>
+                  <th>Due Date</th>
+                  <th>Status / Remaining</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="circulationTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. MEMBERS PAGE -->
+      <section id="membersView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Members</h2>
+            <p>Manage students, teachers, and library members.</p>
+          </div>
+          <div class="page-actions-group staff-only">
+            <button class="btn btn-primary" onclick="openAddMemberModal()">+ Add Member</button>
+          </div>
+        </div>
+
+        <!-- Member Statistics -->
+        <div class="kpi-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom:1.5rem;">
+          <div class="kpi-card">
+            <div class="kpi-label-text">Total Members</div>
+            <div class="kpi-value-stat" id="memTotalCount" style="font-size:1.75rem;">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Active Members</div>
+            <div class="kpi-value-stat" id="memActiveCount" style="font-size:1.75rem; color:var(--success);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Books Borrowed</div>
+            <div class="kpi-value-stat" id="memBorrowedCount" style="font-size:1.75rem; color:var(--gold-soft);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Overdue Accounts</div>
+            <div class="kpi-value-stat" id="memOverdueCount" style="font-size:1.75rem; color:var(--danger);">0</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="filter-controls-row">
+          <div class="search-field-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="memberSearchInput" class="search-input-field" placeholder="Search members by name, roll number, or email...">
+          </div>
+
+          <div class="filter-actions-cluster">
+            <select id="memberTypeFilter" class="select-filter-input" onchange="renderMembers()">
+              <option value="ALL">All Types</option>
+              <option value="STUDENT">Students</option>
+              <option value="FACULTY">Faculty / Teachers</option>
+              <option value="STAFF">Staff</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Members Table -->
+        <div class="data-table-card">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Member ID</th>
+                  <th>Student / Member</th>
+                  <th>Roll / Staff ID</th>
+                  <th>Class / Dept</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Books Borrowed</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="membersTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. FINES & DUES PAGE -->
+      <section id="finesView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Fines & Dues</h2>
+            <p>Track outstanding penalties and manage revenue collection.</p>
+          </div>
+        </div>
+
+        <!-- Financial Statistics Strip -->
+        <div class="kpi-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom:1.5rem;">
+          <div class="kpi-card">
+            <div class="kpi-label-text">Total Fines Issued</div>
+            <div class="kpi-value-stat" id="fineStatTotal" style="font-size:1.75rem;">₹0.00</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Pending Fines</div>
+            <div class="kpi-value-stat" id="fineStatPending" style="font-size:1.75rem; color:var(--danger);">₹0.00</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Paid Fines Collected</div>
+            <div class="kpi-value-stat" id="fineStatPaid" style="font-size:1.75rem; color:var(--success);">₹0.00</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Overdue Accounts</div>
+            <div class="kpi-value-stat" id="fineStatOverdueCount" style="font-size:1.75rem; color:var(--warning);">0</div>
+          </div>
+        </div>
+
+        <!-- Fines Table -->
+        <div class="data-table-card">
+          <div style="padding: 1rem 1.25rem; background:var(--bg-secondary); border-bottom:1px solid var(--border-color); display:flex; align-items:center; justify-content:space-between;">
+            <h3 style="font-size:1.05rem; font-weight:700; color:var(--text-main);">Overdue Fines Ledger</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Fine ID</th>
+                  <th>Member</th>
+                  <th>Book</th>
+                  <th>Due Date</th>
+                  <th>Days Overdue</th>
+                  <th>Fine Amount</th>
+                  <th>Payment Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="finesTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. CATEGORIES PAGE -->
+      <section id="categoriesView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Categories</h2>
+            <p>Organize books into genres, subjects, and academic departments.</p>
+          </div>
+          <div class="page-actions-group staff-only">
+            <button class="btn btn-primary" onclick="openAddCategoryModal()">+ Add Category</button>
+          </div>
+        </div>
+
+        <!-- Categories Table -->
+        <div class="data-table-card">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>Category ID</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Total Books</th>
+                  <th>Available</th>
+                  <th>Issued</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="categoriesTableBody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. REPORTS & ANALYTICS PAGE -->
+      <section id="reportsView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Reports & Analytics</h2>
+            <p>Library performance metrics, circulation trends, and collection analysis.</p>
+          </div>
+        </div>
+
+        <!-- Summary Metric Cards -->
+        <div class="kpi-metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom:1.5rem;">
+          <div class="kpi-card">
+            <div class="kpi-label-text">Total Books</div>
+            <div class="kpi-value-stat" id="repTotalBooks" style="font-size:1.6rem;">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Books Issued</div>
+            <div class="kpi-value-stat" id="repBooksIssued" style="font-size:1.6rem; color:var(--gold-soft);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Books Returned</div>
+            <div class="kpi-value-stat" id="repBooksReturned" style="font-size:1.6rem; color:var(--success);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Overdue Books</div>
+            <div class="kpi-value-stat" id="repOverdueBooks" style="font-size:1.6rem; color:var(--danger);">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Total Members</div>
+            <div class="kpi-value-stat" id="repTotalMembers" style="font-size:1.6rem;">0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label-text">Fine Collection</div>
+            <div class="kpi-value-stat" id="repFineCollection" style="font-size:1.6rem; color:var(--warning);">₹0</div>
+          </div>
+        </div>
+
+        <!-- Minimal SaaS Charts (Clean SVG Charts) -->
+        <div class="analytics-grid-two-col">
+          <!-- Chart 1: Monthly Borrowing Trend -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3>Monthly Borrowing Trend</h3>
+              <span>Last 6 Months Circulation</span>
+            </div>
+            <div class="chart-display-container" id="monthlyBorrowingChart">
+              <!-- Rendered via JavaScript SVG -->
+            </div>
+          </div>
+
+          <!-- Chart 2: Book Availability Ratio -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3>Book Availability Ratio</h3>
+              <span>Current Inventory Health</span>
+            </div>
+            <div class="chart-display-container" id="availabilityDonutChart">
+              <!-- Rendered via JavaScript SVG -->
+            </div>
+          </div>
+
+          <!-- Chart 3: Popular Categories Breakdown -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3>Popular Categories</h3>
+              <span>Collection Distribution by Subject</span>
+            </div>
+            <div id="categoryBreakdownBars" style="padding-top: 0.5rem;">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+
+          <!-- Chart 4: Overdue & Return Compliance -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3>Circulation Compliance</h3>
+              <span>On-Time Returns vs. Overdue Loans</span>
+            </div>
+            <div class="chart-display-container" id="complianceRatioChart">
+              <!-- Rendered via JavaScript SVG -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. USERS / STAFF PAGE -->
+      <section id="usersView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Users & Staff</h2>
+            <p>Manage authorized librarian credentials, permissions, and roles.</p>
+          </div>
+          <div class="page-actions-group admin-only">
+            <button class="btn btn-primary" onclick="showToast('Staff user invited successfully!', 'info')">+ Invite Staff Member</button>
+          </div>
+        </div>
+
+        <div class="data-table-card">
+          <div class="table-responsive">
+            <table class="modern-table">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>User / Full Name</th>
+                  <th>Role</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Account Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- Dynamically loaded from /api/users -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. SETTINGS PAGE -->
+      <section id="settingsView" class="page-view">
+        <div class="page-header-row">
+          <div class="page-title-block">
+            <h2>Settings</h2>
+            <p>Configure library policies, fine rules, and system preferences.</p>
+          </div>
+          <div class="page-actions-group">
+            <button class="btn btn-primary" onclick="showToast('Settings saved successfully!', 'success')">Save Configuration</button>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <!-- Settings Navigation Sidebar -->
+          <div class="settings-nav-sidebar">
+            <button class="settings-nav-btn active" data-settings-tab="general" onclick="switchSettingsTab('general')">Library Information</button>
+            <button class="settings-nav-btn" data-settings-tab="borrowing" onclick="switchSettingsTab('borrowing')">Borrowing Rules</button>
+            <button class="settings-nav-btn" data-settings-tab="fines" onclick="switchSettingsTab('fines')">Fine & Penalty Rules</button>
+            <button class="settings-nav-btn" data-settings-tab="notifications" onclick="switchSettingsTab('notifications')">Notification Settings</button>
+            <button class="settings-nav-btn" data-settings-tab="database" onclick="switchSettingsTab('database')">Database & Backup</button>
+          </div>
+
+          <!-- Settings Content Sections -->
+          <div class="settings-content-card">
+            <!-- 1. General Info -->
+            <div id="settingsSection_general" class="settings-section-pane active">
+              <h3 class="settings-section-title">Library Information</h3>
+              <p class="settings-section-desc">Manage school name, address, academic session, and operating hours.</p>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label">School / Institution Name</label>
+                  <input type="text" class="form-control" value="Aurevia Academy High School">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Library Branch Code</label>
+                  <input type="text" class="form-control" value="LIB-MAIN-01">
+                </div>
+              </div>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label">Official Contact Email</label>
+                  <input type="email" class="form-control" value="library@aurevia.school.edu">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Hotline</label>
+                  <input type="text" class="form-control" value="+91 (11) 2345-6789">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Operating Hours</label>
+                <input type="text" class="form-control" value="Monday – Saturday: 08:00 AM – 05:00 PM">
+              </div>
+            </div>
+
+            <!-- 2. Borrowing Rules -->
+            <div id="settingsSection_borrowing" class="settings-section-pane" style="display:none;">
+              <h3 class="settings-section-title">Borrowing & Circulation Policies</h3>
+              <p class="settings-section-desc">Set default loan period durations, max book limits per role, and renew allowances.</p>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label">Standard Loan Duration (Days)</label>
+                  <input type="number" class="form-control" value="14">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Faculty Loan Duration (Days)</label>
+                  <input type="number" class="form-control" value="30">
+                </div>
+              </div>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label">Max Books per Student</label>
+                  <input type="number" class="form-control" value="3">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Max Books per Teacher / Faculty</label>
+                  <input type="number" class="form-control" value="5">
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Fine Rules -->
+            <div id="settingsSection_fines" class="settings-section-pane" style="display:none;">
+              <h3 class="settings-section-title">Fine & Penalty Calculations</h3>
+              <p class="settings-section-desc">Automated fine rates assessed when books are returned after the scheduled due date.</p>
+
+              <div class="form-grid-two">
+                <div class="form-group">
+                  <label class="form-label">Daily Overdue Penalty Rate (₹)</label>
+                  <input type="number" class="form-control" value="5.00">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Grace Period (Days)</label>
+                  <input type="number" class="form-control" value="1">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Auto-suspend member account when unpaid fine exceeds</label>
+                <input type="number" class="form-control" value="100.00">
+              </div>
+            </div>
+
+            <!-- 4. Notifications -->
+            <div id="settingsSection_notifications" class="settings-section-pane" style="display:none;">
+              <h3 class="settings-section-title">Notification Settings</h3>
+              <p class="settings-section-desc">Configure automated reminder alerts for due dates and overdue loan notices.</p>
+
+              <div class="form-group">
+                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main);">
+                  <input type="checkbox" checked style="accent-color:var(--gold-primary);">
+                  Send automated email alert 2 days prior to due date
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-main);">
+                  <input type="checkbox" checked style="accent-color:var(--gold-primary);">
+                  Send daily SMS / notification on overdue accounts
+                </label>
+              </div>
+            </div>
+
+            <!-- 5. Database -->
+            <div id="settingsSection_database" class="settings-section-pane" style="display:none;">
+              <h3 class="settings-section-title">Database & System Management</h3>
+              <p class="settings-section-desc">Manage your local MySQL database connection and library sample data.</p>
+
+              <div style="background:var(--bg-input); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:1.25rem; margin-bottom:1.5rem;">
+                <div style="font-size:0.85rem; margin-bottom:0.5rem;">
+                  <strong>Active Database Engine:</strong> <span style="color:var(--gold-soft);">MySQL Database (aurevia_library)</span>
+                </div>
+                <div style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:1rem;">
+                  Connected to local MySQL database on port 3306.
+                </div>
+                <div style="display:flex; gap:0.75rem;">
+                  <a href="/h2-console" target="_blank" class="btn btn-secondary btn-sm">
+                    🗄️ Open H2 Web Console
+                  </a>
+                  <button class="btn btn-secondary btn-sm" onclick="handleSeedDemo()">
+                    ✨ Reload Sample Data
+                  </button>
+                  <button class="btn btn-danger btn-sm" onclick="handleResetDb()">
+                    ⚠️ Reset Database
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Main Footer -->
+      <footer class="app-main-footer">
+        <div class="footer-left">
+          <span>&copy; 2026 AUREVIA</span>
+          <span>&bull;</span>
+          <span>School Library Management System</span>
+        </div>
+        <div class="footer-right">
+          <span class="footer-tagline">"The Path to Knowledge"</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ========================================================
+       MODALS
+       ======================================================== -->
+
+  <!-- 1. Modal: Issue Book -->
+  <div id="issueModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>⚡ Issue Book to Member</h3>
+        <button class="modal-close-icon" onclick="closeModal('issueModal')">✕</button>
+      </div>
+      <form onsubmit="submitIssueBook(event)">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="issueBookSelect">Select Available Book *</label>
+            <select id="issueBookSelect" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="issueMemberSelect">Select Borrower Member *</label>
+            <select id="issueMemberSelect" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="issueDaysInput">Loan Period</label>
+            <select id="issueDaysInput" class="form-control">
+              <option value="7">7 Days (Short Loan)</option>
+              <option value="14" selected>14 Days (Standard Student Loan)</option>
+              <option value="21">21 Days (Extended Reading)</option>
+              <option value="30">30 Days (Faculty Privilege)</option>
+            </select>
+          </div>
+          <div style="background:var(--bg-input); padding:0.85rem; border-radius:var(--radius-md); border:1px solid var(--border-color); font-size:0.85rem;">
+            <span>🗓️ Calculated Due Date: <strong id="issueDueDatePreview" style="color:var(--gold-primary);">Calculating...</strong></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('issueModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Confirm Issue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Modal: Return Book -->
+  <div id="returnModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3>🔄 Return Book Confirmation</h3>
+        <button class="modal-close-icon" onclick="closeModal('returnModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom:1.25rem;">
+          <div style="font-size:0.75rem; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.04em;">Returning Book</div>
+          <h4 id="returnModalBookTitle" style="font-size:1.15rem; font-weight:800; color:var(--text-main); margin-top:0.25rem;">Book Title</h4>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.85rem; font-size:0.85rem; margin-bottom:1.25rem; background:var(--bg-input); padding:1rem; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+          <div>
+            <span style="color:var(--text-secondary); display:block; font-size:0.75rem;">Borrower</span>
+            <strong id="returnModalMemberName" style="color:var(--text-main);">Member Name</strong>
+          </div>
+          <div>
+            <span style="color:var(--text-secondary); display:block; font-size:0.75rem;">Issue Date</span>
+            <span id="returnModalIssueDate">2026-10-01</span>
+          </div>
+          <div>
+            <span style="color:var(--text-secondary); display:block; font-size:0.75rem;">Due Date</span>
+            <span id="returnModalDueDate">2026-10-15</span>
+          </div>
+          <div>
+            <span style="color:var(--text-secondary); display:block; font-size:0.75rem;">Return Date</span>
+            <span style="color:var(--success); font-weight:700;">Today</span>
+          </div>
+        </div>
+
+        <div id="returnFineNotice"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('returnModal')">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="confirmReturnBook()">Confirm & Complete Return</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Modal: Add / Edit Book -->
+  <div id="bookModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="bookModalTitle">Add New Book</h3>
+        <button class="modal-close-icon" onclick="closeModal('bookModal')">✕</button>
+      </div>
+      <form onsubmit="submitBookForm(event)">
+        <input type="hidden" id="bookFormId">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="bookFormTitle">Book Title *</label>
+            <input type="text" id="bookFormTitle" class="form-control" required placeholder="e.g. Clean Code">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookFormAuthor">Author *</label>
+            <input type="text" id="bookFormAuthor" class="form-control" required placeholder="e.g. Robert C. Martin">
+          </div>
+          <div class="form-grid-two">
+            <div class="form-group">
+              <label class="form-label" for="bookFormCategory">Category</label>
+              <select id="bookFormCategory" class="form-control"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bookFormRack">Rack / Shelf Location</label>
+              <input type="text" id="bookFormRack" class="form-control" placeholder="e.g. Rack CS-101">
+            </div>
+          </div>
+          <div class="form-grid-two">
+            <div class="form-group">
+              <label class="form-label" for="bookFormIsbn">ISBN Code</label>
+              <input type="text" id="bookFormIsbn" class="form-control" placeholder="978-0132350884">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bookFormYear">Publication Year</label>
+              <input type="number" id="bookFormYear" class="form-control" placeholder="2022">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookFormCover">Cover Image URL (Optional)</label>
+            <input type="url" id="bookFormCover" class="form-control" placeholder="https://...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bookFormDesc">Synopsis / Description</label>
+            <textarea id="bookFormDesc" class="form-control" placeholder="Brief overview of the book contents..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('bookModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Modal: Add / Edit Member -->
+  <div id="memberModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="memberModalTitle">Add New Member</h3>
+        <button class="modal-close-icon" onclick="closeModal('memberModal')">✕</button>
+      </div>
+      <form onsubmit="submitMemberForm(event)">
+        <input type="hidden" id="memberFormId">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="memberFormName">Full Name *</label>
+            <input type="text" id="memberFormName" class="form-control" required placeholder="e.g. Ananya Sen">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="memberFormEmail">Institutional Email *</label>
+            <input type="email" id="memberFormEmail" class="form-control" required placeholder="ananya.sen@school.edu">
+          </div>
+          <div class="form-grid-two">
+            <div class="form-group">
+              <label class="form-label" for="memberFormPhone">Contact Phone *</label>
+              <input type="text" id="memberFormPhone" class="form-control" required placeholder="9876543210">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="memberFormType">Membership Role</label>
+              <select id="memberFormType" class="form-control">
+                <option value="STUDENT">Student</option>
+                <option value="FACULTY">Faculty / Teacher</option>
+                <option value="STAFF">Staff</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('memberModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Member</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. Modal: Add / Edit Category -->
+  <div id="categoryModal" class="modal-backdrop">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="categoryModalTitle">Add Category</h3>
+        <button class="modal-close-icon" onclick="closeModal('categoryModal')">✕</button>
+      </div>
+      <form onsubmit="submitCategoryForm(event)">
+        <input type="hidden" id="categoryFormId">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="categoryFormName">Category Name *</label>
+            <input type="text" id="categoryFormName" class="form-control" required placeholder="e.g. Artificial Intelligence">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="categoryFormDesc">Category Description</label>
+            <textarea id="categoryFormDesc" class="form-control" placeholder="Specify subject area, curriculum scope, or topics..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('categoryModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Category</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Modal: Global Search & Command Palette (Ctrl + K) -->
+  <div id="commandPaletteModal" class="modal-backdrop">
+    <div class="modal-window command-palette-window">
+      <div class="command-search-head">
+        <span style="color:var(--gold-primary);">🔍</span>
+        <input type="text" id="commandPaletteInput" placeholder="Type a command, book title, or member name...">
+        <span class="kbd-shortcut">ESC</span>
+      </div>
+      <div class="command-results-list" id="commandPaletteResults">
+        <!-- Results injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Modal: Forgot Password Notice -->
+  <div id="forgotPasswordModal" class="modal-backdrop">
+    <div class="modal-window" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3>Reset Password</h3>
+        <button class="modal-close-icon" onclick="closeModal('forgotPasswordModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="text-align:center; padding:1.25rem 0.5rem 0.75rem;">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">ℹ️</div>
+          <h4 style="margin-bottom:0.5rem; color:var(--text-main); font-size:1.15rem;">Password Recovery</h4>
+          <p style="color:var(--text-secondary); font-size:0.925rem; line-height:1.5;">
+            Password recovery is managed by the library administration. Please contact the administrator.
+          </p>
+          <div style="margin-top:1.25rem; padding:0.75rem 1rem; background:rgba(212,175,55,0.06); border:1px solid var(--border-color); border-radius:8px; font-size:0.85rem; color:var(--gold-soft);">
+            Contact: <strong>admin@aurevia.edu</strong>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="justify-content:center;">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('forgotPasswordModal')">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Modal: Book Details -->
+  <div id="bookDetailsModal" class="modal-backdrop">
+    <div class="modal-window detail-modal-window">
+      <div class="modal-header">
+        <h3 id="bookDetailModalTitle">Book Details</h3>
+        <button class="modal-close-icon" onclick="closeModal('bookDetailsModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="detail-layout-grid">
+          <div class="detail-cover-showcase" id="bookDetailCoverBox">
+            📖
+          </div>
+          <div class="detail-info-list">
+            <h3 id="bookDetailTitle" style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); line-height:1.25;">Book Title</h3>
+            <p id="bookDetailAuthor" style="color:var(--gold-soft); font-weight:600; font-size:0.875rem;">by Author</p>
+            
+            <div class="detail-info-row" style="margin-top:0.5rem;">
+              <span class="detail-info-label">Category</span>
+              <span class="detail-info-val" id="bookDetailCategory">General</span>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-label">ISBN</span>
+              <span class="detail-info-val" id="bookDetailIsbn" style="font-family:var(--font-mono);">—</span>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-label">Publisher</span>
+              <span class="detail-info-val" id="bookDetailPublisher">—</span>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-label">Publication Year</span>
+              <span class="detail-info-val" id="bookDetailYear">—</span>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-label">Location / Shelf</span>
+              <span class="detail-info-val" id="bookDetailRack">—</span>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-label">Status</span>
+              <span class="detail-info-val" id="bookDetailStatus"><span class="status-pill available">Available</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.25rem;" id="bookDetailDescBox">
+          <span style="font-size:0.75rem; text-transform:uppercase; color:var(--gold-soft); letter-spacing:0.05em; font-weight:700;">Synopsis / Overview</span>
+          <p id="bookDetailDesc" style="font-size:0.875rem; color:var(--text-secondary); margin-top:0.35rem; line-height:1.5;">—</p>
+        </div>
+
+        <div class="detail-history-box">
+          <h4>Circulation History</h4>
+          <div id="bookDetailBorrowHistory" style="font-size:0.825rem; color:var(--text-secondary);">
+            No loans recorded for this book.
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div id="bookDetailActionGroup" style="display:flex; gap:0.5rem; width:100%; justify-content:space-between; align-items:center;">
+          <div id="bookDetailStaffActions" class="staff-only" style="display:flex; gap:0.5rem;">
+            <button type="button" class="btn btn-secondary btn-sm" id="bookDetailEditBtn">✏️ Edit Book</button>
+            <button type="button" class="btn btn-danger btn-sm" id="bookDetailDeleteBtn">🗑️ Delete</button>
+          </div>
+          <div style="display:flex; gap:0.5rem; margin-left:auto;">
+            <button type="button" class="btn btn-secondary" onclick="closeModal('bookDetailsModal')">Close</button>
+            <button type="button" class="btn btn-primary staff-only" id="bookDetailIssueBtn">⚡ Issue Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Modal: Member Details -->
+  <div id="memberDetailsModal" class="modal-backdrop">
+    <div class="modal-window detail-modal-window">
+      <div class="modal-header">
+        <h3>Member Profile</h3>
+        <button class="modal-close-icon" onclick="closeModal('memberDetailsModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="display:flex; align-items:center; gap:1.25rem; margin-bottom:1.25rem; padding-bottom:1.15rem; border-bottom:1px solid var(--border-color);">
+          <div class="member-avatar-chip" id="memDetailAvatar" style="width:52px; height:52px; font-size:1.35rem; font-weight:700;">M</div>
+          <div>
+            <h3 id="memDetailName" style="font-family:var(--font-serif); font-size:1.25rem; color:var(--text-main); font-weight:700;">Member Name</h3>
+            <div style="display:flex; align-items:center; gap:0.65rem; margin-top:0.35rem;">
+              <span class="status-pill info" id="memDetailRoleBadge">STUDENT</span>
+              <span style="font-size:0.8rem; color:var(--text-secondary);" id="memDetailId">#MEM-1</span>
+              <span class="status-pill available" id="memDetailStatusBadge">ACTIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.85rem; font-size:0.85rem; margin-bottom:1.25rem;">
+          <div class="detail-info-row">
+            <span class="detail-info-label">Institutional Email</span>
+            <span class="detail-info-val" id="memDetailEmail">—</span>
+          </div>
+          <div class="detail-info-row">
+            <span class="detail-info-label">Phone</span>
+            <span class="detail-info-val" id="memDetailPhone">—</span>
+          </div>
+          <div class="detail-info-row">
+            <span class="detail-info-label">Dept / Class</span>
+            <span class="detail-info-val" id="memDetailDept">—</span>
+          </div>
+          <div class="detail-info-row">
+            <span class="detail-info-label">Roll / Staff ID</span>
+            <span class="detail-info-val" id="memDetailRoll">—</span>
+          </div>
+        </div>
+
+        <div class="detail-history-box" style="margin-bottom:1rem;">
+          <h4>Currently Borrowed Books</h4>
+          <div id="memDetailActiveLoans" style="font-size:0.825rem; color:var(--text-secondary);">No active loans.</div>
+        </div>
+
+        <div class="detail-history-box">
+          <h4>Circulation History & Fines</h4>
+          <div id="memDetailLoanHistory" style="font-size:0.825rem; color:var(--text-secondary);">No past borrowing history.</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeModal('memberDetailsModal')">Close</button>
+        <button type="button" class="btn btn-primary staff-only" id="memDetailEditBtn">Edit Member</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toastRack" class="toast-rack"></div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+</html>
